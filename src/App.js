@@ -38,14 +38,6 @@ class App extends Component {
         <main>
           <Specs cookies={this.props.slimjim} selected={this.state.selected}/>
           <Features icecream={this.state.selected}/>
-
-        
-          
-    
-          
-            
-           
-            
         </main>
       </div>
    );
