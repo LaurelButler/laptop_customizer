@@ -1,6 +1,14 @@
 import React from 'react';
+   
 
 class Features extends React.Component {
+    updateFeature(feature, newValue) {
+        const selected = Object.assign({}, this.state.selected);
+        selected[feature] = newValue;
+        this.setState({
+            selected
+        });
+    }
     render () {
         const summary = Object.keys(this.props.icecream)
             .map(key => <div className="summary__option" key={key}>
