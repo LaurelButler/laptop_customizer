@@ -2,6 +2,8 @@ import React from 'react';
 
 class Specs extends React.Component {
     render() {
+        // because i renamed the props in my app.js file, i had to refactor everything here calling for the state to a prop
+        //followed by the name of that prop
         const features = Object.keys(this.props.cookies)
             .map(key => {
                 const options = this.props.cookies[key].map((item, index) => {

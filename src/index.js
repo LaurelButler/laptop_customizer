@@ -47,3 +47,4 @@ const FEATURES = {
 };
 
 ReactDOM.render(<App slimjim={FEATURES}/>, document.getElementById('root'));
+//here i renamed FEATURES to slimjim

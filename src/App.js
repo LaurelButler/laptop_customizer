@@ -28,7 +28,8 @@ class App extends Component {
       }
     }
   }
-
+  
+// needed to do an arrow function because it was not understanding the basic function expression
   updateFeature = (feature, newValue) => {
     const selected = Object.assign({}, this.state.selected);
     selected[feature] = newValue;
@@ -40,8 +41,10 @@ class App extends Component {
   render() {
 
     return ( <div className="App">
-        <Header /> 
+      {/* here i am rendering the component files i created */}
+        <Header />  
         <main>
+          {/* i renamed the props */}
           <Specs cookies={this.props.slimjim} selected={this.state.selected} pizza={this.updateFeature}/>
           <Features icecream={this.state.selected}/>
         </main>
