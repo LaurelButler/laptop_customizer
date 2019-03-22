@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import Header from './components/Header'
+import Specs from './components/Specs'
+import Features from './components/Features'
 
 class App extends Component {
   constructor(props){
@@ -49,42 +52,17 @@ class App extends Component {
           .reduce((acc, curr) => acc + this.state.selected[curr].cost, 0);    
 
 
-    const features = Object.keys(this.props.features)
-          .map(key => {
-            const options = this.props.features[key].map((item, index) => {
-              const selectedClass = item.name === this.state.selected[key].name ? 'feature__selected' : '';
-              const featureClass = 'feature__option ' + selectedClass;
-              return <li key={index} className="feature__item">
-                <div className={featureClass}
-                  
-                  onClick={e => this.updateFeature(key, item)}>
-                    { item.name }
-                    ({ new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD'})
-                      .format(item.cost) })
-                </div>
-              </li>
-            });
+    
 
-            return <div className="feature" key={key}>
-              <div className="feature__name">{key}</div>
-              <ul className="feature__list">
-                { options }
-              </ul>
-            </div>
-          });      
-
-    return (
-      <div className="App">
-        <header>
-          <h1>ELF Computing</h1>
-          <h3>Laptops</h3>
-          <h5>Customize your laptop</h5>  
-        </header>      
+    return ( <div className="App">
+        <Header /> 
         <main>
-          <section className="main__form">
-            <h3>TECH SPECS AND CUSTOMIZATIONS</h3>
-            { features }
-          </section>
+          <Specs cookies={this.props.slimjim} selected={this.state.selected}/>
+          <Features />
+
+        
+          
+    
           <section className="main__summary">
             <h3>NEW GREENLEAF 2018</h3>
             {summary}
@@ -98,7 +76,7 @@ class App extends Component {
           </section>
         </main>
       </div>
-    );
+   );
   }
 }
 

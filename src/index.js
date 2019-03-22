@@ -46,4 +46,4 @@ const FEATURES = {
   ]
 };
 
-ReactDOM.render(<App features={FEATURES}/>, document.getElementById('root'));
+ReactDOM.render(<App slimjim={FEATURES}/>, document.getElementById('root'));
