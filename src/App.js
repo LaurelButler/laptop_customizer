@@ -29,14 +29,20 @@ class App extends Component {
     }
   }
 
-
+  updateFeature = (feature, newValue) => {
+    const selected = Object.assign({}, this.state.selected);
+    selected[feature] = newValue;
+    this.setState({
+      selected
+    });
+  }
 
   render() {
 
     return ( <div className="App">
         <Header /> 
         <main>
-          <Specs cookies={this.props.slimjim} selected={this.state.selected}/>
+          <Specs cookies={this.props.slimjim} selected={this.state.selected} pizza={this.updateFeature}/>
           <Features icecream={this.state.selected}/>
         </main>
       </div>

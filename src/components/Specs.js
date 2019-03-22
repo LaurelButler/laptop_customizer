@@ -10,7 +10,7 @@ class Specs extends React.Component {
                     return <li key={index} className="feature__item">
                         <div className={featureClass}
 
-                            onClick={e => this.updateFeature(key, item)}>
+                            onClick={e => this.props.pizza(key, item)}>
                             {item.name}
                             ({new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' })
                                 .format(item.cost)})
